@@ -5,22 +5,25 @@
     <title> new island eats </title>
     <link rel="stylesheet" href="1style.css">
     <meta name="view port " content="width=display-width, initial-scale=1">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Roboto&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div class="container">
         <div class="intro">
-            <img src="img\island-image.jfif" alt="island">
+            <img class="id" src="img\island-image.jfif" style="width: 250px; height: 250px;" alt="island">
             <h1 class="h1">THE NEWEST AND CHEAPEST RESTAURANT IN TOWN
             </h1>
-            <h3> located at opposite garrki market gate
+            <h3> located at opposite gariki market gate
             </h3>
             <p> we bring the test of home </p>
         </div>
+        <hr>
         <div class="style">
             <div class="local-soups">
-                <h1> local soups </h1>
+                <h3> local soups </h3>
                 <ul class="type">
                     <li> egusi soup </li>
                     <li> ogro soup</li>
@@ -28,7 +31,7 @@
                 </ul>
             </div>
             <div class="our-rice">
-                <h1>our rice</h1>
+                <h3>our rice</h3>
                 <ul class="type">
                     <li> fried rice </li>
                     <li> coconut rice</li>
@@ -36,45 +39,70 @@
                 </ul>
             </div>
         </div>
+<hr>
         <div>
-            <div class="food">
-                <figcaption class="food-2"> SOME OF OUR DELICIOUS MEALS
-                    <img src="img/food 2.jfif" alt="">
-                    <img src="img/food.jfif" alt="">
-                    <img src="img/food 4.jfif" alt="">
-                    <img src="img/food 3.jfif" alt="">
-                </figcaption>
-
-            </div>
-            <div class="links-and-contact">
-                <div>
-                <h1>links</h1>
-                <ul>
-                    <li>
-                        <a href="http://www.chusilmotors.rf.gd/?i=2"> first email </a>
-                    </li>
-                    <li>
-                        <a href="http://www.chusilmotors.rf.gd/?i=2"> customer serice</a>
-                    </li>
-                    <li>
-                        <a href="http://www.chusilmotors.rf.gd/?i=2">fast delivery </a>
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <form action="#">
-                    <label for="email">
-                        email:<input id="email" place holder="enter your email" />
-                    </label>
-                    <label for="message">
-                        message: <textarea id="message"> your message</textarea>
-                    </label>
-                    <input type="submit" value="send message" />
-                </form>
-
-            </div>
+            <h3 class="my-menu"> off my menu</h3>
+            <figcaption class="food-2"> SOME OF OUR DELICIOUS MEALS
+                <div class="my-menu-grid">
+                    <figure>
+                        <div class="menu-image-wrapper">
+                            <img class="menu-image" src="img/food 2.jfif" style="width:150; height: 150; " alt="">
+                            <h4> different eats</h4>
+                        </div>
+                        <div class="menu-image-wrapper">
+                            <img class="menu-image" src="img/food.jfif" style="width:150; height: 150; " alt="">
+                            <h4>our-rice </h4>
+                        </div>
+                        <div class="menu-image-wrapper">
+                            <img class="menu-image" src="img/food 4.jfif" style="width:150; height: 200; " alt="">
+                            <h4>omlet</h4>
+                        </div>
+                        <div class="menu-image-wrapper">
+                            <img class="menu-image" src="img/food 3.jfif" style="width:150; height: 200; " alt="">
+                            <h4>
+                                local-soups
+                            </h4>
+                        </div>
+                    </figure>
+            </figcaption>
         </div>
     </div>
+    <hr>
+
+    <div class="links-and-contact">
+        <div class="links">
+            <h1>links</h1>
+            <ul class="link-list">
+                <li>
+                    <a href="http://www.chusilmotors.rf.gd/?i=2"> first email </a>
+                </li>
+                <li>
+                    <a href="http://www.chusilmotors.rf.gd/?i=2"> for customer</a>
+                </li>
+                <li>
+                    <a href="http://www.chusilmotors.rf.gd/?i=2">fast delivery </a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <form action="#">
+                <label for="email">
+                    <h4>email</h4>
+                    <input id="email" place holder="enter your email" />
+                </label>
+                <label for="message">
+                    <h4>message</h4>
+                    <textarea id="message"> your message</textarea>
+                </label>
+                <div class="submit-button-wrapper">
+                    <input id="sumbit-button" type="submit" value="send message" />
+                </div>
+            </form>
+
+        </div>
+    </div>
+    </div>
+<script src="1.js"></script>
 </body>
 
 </html>

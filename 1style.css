@@ -1,15 +1,26 @@
-.h1 {
-    color: red;
+body {
+    font-family: 'googleapis', 'Oswald';
+    background: rgb(#caebf2);
 }
 
-.style {
-    font-style: italic;
-    font-size: larger;
+h1,
+h2,
+h3,
+h4,
+figcaption {
+    font-family: 'roboto', monospace;
+}
+
+.h1 {
+    color: red;
 }
 
 .container {
     max-width: 840px;
     margin: 0 auto;
+}
+.container >div{
+margin: 20px auto;
 }
 
 .intro {
@@ -33,9 +44,114 @@
     list-style: none;
 }
 
-@media(max-width:480px)
-{ .style{grid-template-columns: 100px;
+@media(max-width:480px) {
+    .style {
+        grid-template-columns: 100px;
+
+    }
 
 }
 
+.food-2 {
+    text-align: center;
+}
+
+.my-menu {
+    text-align: center;
+}
+
+.my-menu-grid {
+    display: grid;
+    grid-template-rows: 50% 50%;
+}
+
+.menu-image-wrapper {
+    justify-self: center;
+    padding: 4%;
+    position: relative;
+}
+
+.menu-image:hover {
+    filter: brightness(.75);
+    box-shadow: 0 8px 12px 0 rgba(34, 60, 80, o.16);
+}
+
+.menu-image-wrapper:hover>h4 {
+    visibility: visible;
+}
+
+.menu-image-wrapper:hover>h4 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    visibility: hidden;
+    z-index: 2;
+    transition: all ease-in-out .2%
+}
+
+@media(max-width: 650px) {
+    .my-menu-grid {
+        grid-template-columns: 100px;
+
+    }
+}
+
+.links-and-contact {
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+
+.links {
+    justify-self: center;
+}
+
+.link-list {
+    list-style: none;
+    padding: 0%;
+}
+
+@media(max-width:650px) {
+    .links-and-contact {
+        grid-template-columns: 100%;
+    }
+}
+
+.id {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    box-shadow: 0 4px 6px 0 rgb(34, 60, 80, 0.16);
+    transition: all ease-in-out.2%;
+}
+
+.id:hover {
+    box-shadow: 0 8px 12px 0 rgb(34, 60, 80, o.16);
+}
+
+.my-menu {
+    border-radius: 5px;
+    box-shadow: 0 4px 6px 0 rgba(34, 60, 80, o.16);
+    transition: all ease-in-out .2%;
+}
+
+form input,
+textarea {
+    padding: 5px;
+    border-radius: 5px;
+    width: 240px;
+}
+
+form input[type="sumbit"] {
+    width: 250px;
+}
+
+.submit-button-wrapper {
+    margin: 20px 0;
+}
+hr{
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right,rgba(0,0,0,0),rgba(0,0,0,0.75),rgba(0,0,0,0));
 }
