@@ -16,3 +16,6 @@ submitButton.addEventListener('click', function (e) {
     else {alert( 'that does not look like a valid email address, pls try again')}
 
 })
+const btn = document.querySelector('.btn');{
+    document.querySelector('body').classList.add('.h1');
+}

@@ -1,0 +1,67 @@
+.my-div{
+    border-radius: 6px;
+    border:solid 1px #ccc;
+    min-width:250px;
+    padding: auto;
+    background-color: #ccc;
+    width:30%;
+    margin: auto;
+    
+}
+
+
+
+h1{
+    text-align: center;
+    font-size: 40px;
+    font-style:italic
+}
+.container {
+    max-width: 250px;
+    margin: auto;
+    font-size: 15px;
+    font-style: oblique;
+    
+}
+#h1{
+    font-size: 25px;
+}
+
+.btn {
+    text-align: center;
+
+}
+
+.btn {
+    width: 100px;
+    color: red;
+    background-color: black;
+}
+
+.submit {
+    padding: 10px;
+}
+
+.email {
+    display: block;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    text-align: center;
+}
+
+.name {
+    display: block;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    text-align: center;
+}
+
+.submit {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    text-align: center;
+}
+.type
+{
+    width: 250px
+}

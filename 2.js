@@ -47,26 +47,61 @@ switch (color) {
         break;
 }
 
-const  addNums= num1  =>
-num1 +5;
+const addNums = num1 =>
+    num1 + 5;
 
-console.log (addNums(5));
+console.log(addNums(5));
 
-//constructor function
- function Person(firstName,lastName,dob){
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.dob = new Date(dob);
-    this.getBirthYear=function(){
+
+//class
+class Person {
+    constructor(firstName, lastName, dob) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dob = new Date(dob);
+    }
+    getBirthYear = function () {
         return this.dob.getFullYear();
     }
- } 
+    getFullName = function () {
+        return `${this.firstName} ${this.lastName}`;
+    }
+}
 //instantiate object
 
- const person1 = new Person('john','doe','4-3-1980');
+const person1 = new Person('john', 'doe', '4-3-1980');
 
- const person2 = new Person('oge','ejim','5-4-1180');
+const person2 = new Person('oge', 'ejim', '5-4-1180');
 
- console .log(person2.dob.getFullYear());
+console.log(person2.getFullName());
 
-console .log (person1.getBirthYear());
+console.log(person1);
+
+const myForm = document.querySelector('#my-form');
+const nameInput = document.querySelector('#name');
+const emailInput = document.querySelector('#email');
+const userList= document.querySelector('#user');
+const msg= document.querySelector('.msg');
+
+myForm.addEventListener('submit', onSubmit);
+function onSubmit(e) {
+    e.preventDefault();
+if (nameInput.value=== ''|| emailInput.value===''){
+msg.innerHTML = 'please enter all fields'
+setTimeout(() => msg.remove(),3000);
+}else{
+    const li = document.createElement('li');
+    li.appendChild(document.createTextNode(`${nameInput.value}:${emailInput.value}`));
+
+    userList.appendChild(li);
+
+    //clear fields
+    nameInput.value = '';
+    emailInput.value = '';
+}
+
+}
+
+
+
+
