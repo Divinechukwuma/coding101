@@ -1,4 +1,4 @@
-let emailElement = document.querySelector('#email');
+/*let emailElement = document.querySelector('#email');
 let messageElement = document.querySelector('#message')
 console.log(emailElement);
 let typeElement = document.querySelector('.type')
@@ -18,4 +18,4 @@ submitButton.addEventListener('click', function (e) {
 })
 const btn = document.querySelector('.btn');{
     document.querySelector('body').classList.add('.h1');
-}
+}*/
