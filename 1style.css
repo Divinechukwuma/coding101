@@ -45,12 +45,20 @@ body{
         width: 50%;
     }
 }
-#burger{
-    height: 250px;
-}
-#cake{
-    height: 250px;
+.card-body img{
+    height: 500px;
 }
 body{
     background: linear-gradient(to right,white, grey,white);
+    /* Add this to your existing CSS or create a new style block */
+
+    scroll-behavior: smooth;
+
+}
+#map{
+    height: 250px;
+    width: 900%;
+}
+#header{
+    
 }

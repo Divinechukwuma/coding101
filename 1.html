@@ -7,16 +7,16 @@
     <!--bootstrap css-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <!-- Option 1: Include in HTML -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="1style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
 </head>
 
 <body>
     <!--navbar-->
     <section>
+        <div class="header" id="header"></div>
         <nav class="navbar navbar-expand-md bg-dark navbar-dark pt-3 fixed-top">
             <div class="container">
                 <a href="#" class="navbar-brand">
@@ -116,8 +116,8 @@
     <!--introduction-->
     <section class="text-dark p-5 text-center">
         <div class="container">
-            <div class="d-sm-flex ">
-                <img class="img-flui d w-50 h-50" src="day restaurant.jpg" alt="day restaurant">
+            <div class="d-md-flex ">
+                <img class="img-fluid d w-50 h-50" src="day restaurant.jpg" alt="day restaurant">
                 <div class="p-3">
                     <h1> <span class="text-warning">THE NEWEST AND CHEAPEST RESTAURANT IN TOWN </span>
                     </h1>
@@ -128,7 +128,7 @@
                     consectetur veritatis culpa officiis provident deserunt
                     aspernatur exercitationem nisi
                     veniam fugit, dolores laudantium facilis? </p>
-                    <button class="btn-success btn-lg">KNOW MORE</button>
+                    <button class="btn-success btn-lg" data-bs-toggle="modal" data-bs-target="#know">KNOW MORE</button>
                 </div>
 
             </div>
@@ -136,8 +136,8 @@
     </section>
     <hr>
     <!--types of dishes-->
-    <section class="p-5">
-        <div class="container">  
+    <section id="menu">
+        <div>
             <h1 class="text-center text-light bg-warning">OUR MENU</h1>
             <div class="row text-center">
                 <div class="col-md-4">
@@ -147,10 +147,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-2">
+                <div class="col-md-4">
                     <div class="card">
                         <div class="card-body text-center">
-                            <img src="fruit salad.jpg" alt="fruit" class="img-fluid card-image w-md-25 h-md-25" id="burger">
+                            <img src="salad3.jpg" alt="salad" class="img-fluid card-image w-md-25 h-md-25">
                         </div>
                     </div>
                 </div>
@@ -187,24 +187,25 @@
             </div>
         </div>
     </section>
-    
+
     <hr>
     <!--order-->
-    <section class="text-dark p-5 text-center">
+    <section id="order" class="text-dark p-5 text-center">
         <div class="container">
-            <div class="d-sm-flex ">
-                <img class="img-flui d w-50 h-50" src="dark restaurant.jpg" alt="dark restaurant">
+            <div class="d-md-flex ">
+                <img class="img-fluid d w-50 h-50" src="delivery 2.jpg" alt="delivery">
                 <div class="p-3">
                     <h1> <span class="text-warning">YOU CAN STAY HOME, WE WILL COME TO YOU </span>
                     </h1>
                     <p class="lead">
-                    <h4>we bring the teaste of home</h4>
+                    <h4>You can stay home, we will meet you </h4>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Nam quo possimus in minima explicabo pariatur laboriosam
                     consectetur veritatis culpa officiis provident deserunt
                     aspernatur exercitationem nisi
                     veniam fugit, dolores laudantium facilis? </p>
-                    <button class="btn-success btn-lg" data-bs-toggle="modal" data-bs-target="#order">ORDER HERE</button>
+                    <button class="btn-success btn-lg" data-bs-toggle="modal" data-bs-target="#order">ORDER
+                        HERE</button>
                 </div>
 
             </div>
@@ -212,90 +213,271 @@
     </section>
     <hr>
     <!--CHEFS-->
-    <section>
-        <div class="row">
-            <div class="col-md">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <img src="chef1.jpg" alt="chef1" class="img-fluid card-image w-md-50 h-md-50">
+    <section id="chefs">
+        <div class="container">
+            <div class="row">
+                <div class="col-md">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <img src="chef5.jpg" alt="chef1"
+                                class="img-fluid card-image w-md-50 h-md-50 rounded-circle mb-3">
+                            <h3 class="card-title mb-3">CHIMOBI WISDOM</h3>
+                            <p class="card-text">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo deserunt consequuntur eum
+                                repudiandae illo
+                                consectetur voluptatu
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. At exercitationem ravero,
+                                adipisci
+                                neque omnis. Ratione!
+                                m tempore nesciunt aliquid obcaecati quibusdam, asperiores, labor
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <img src="chef2.jpg" alt="chef2" class="img-fluid card-image w-md-50 h-md-50">
+                <div class="col-md">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <img src="chef2.jpg" alt="chef2"
+                                class="img-fluid card-image w-md-50 h-md-50 rounded-circle mb-3">
+                            <h3 class="card-title mb-3">benjamin joseph</h3>
+                            <p class="card-text">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo deserunt consequuntur eum
+                                repudiandae illo
+                                consectetur voluptatu Lorem ipsum, dolor sit amet consectetur adipisicing. Lorem, ipsum
+                                dolor.
+                                asperiores, laboriosam excepturi autem amet a quas error. Assumenda.
+                                ratione reprehenderit blanditiis, beatae eveniet!
+
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <img src="chef6.jpg" alt="chef6" class="img-fluid card-image w-md-50 h-md-50">
+                <div class="col-md">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <img src="chef6.jpg" alt="chef6"
+                                class="img-fluid card-image w-md-50 h-md-50 rounded-circle mb-3">
+                            <h3 class="card-title mb-3">ANTHONIA EJIM</h3>
+                            <p class="card-text">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo deserunt consequuntur eum
+                                repudiandae illo
+                                cons
+                                m tempore nesciunt aliquid obcaecati quibusdamm,Lorem ipsum, dolor sit amet consectetur
+                                adipisicing elit. Libero, perspiciatis?
+                                ratione reprehenderit blanditiis, beatae eveniet!
+                                ratione 
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <img src="chef3.jpg" alt="chef3" class="img-fluid card-image w-md-50 h-md-50">
-                       <div class="card-text">lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, est non. Culpa fuga eum quidem, alias nisi sequi repudiandae unde autem, fugiat, inventore iste! Aliquam, sint! Doloribus enim inventore illo!</div>
+                <div class="col-md">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <img src="chef3.jpg" alt="chef3"
+                                class="img-fluid card-image w-md-50 h-md-50 rounded-circle mb-3">
+                            <h3 class="card-title mb-3">kelvin mayers</h3>
+                            <p class="card-text">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo deserunt consequuntur eum
+                                repudiandae illo
+                                consectetur voluptatu Lorem ipsum, dolor sit amet consectetur adipisicing. Lorem, ipsum
+                                dolor.
+                                m tempore nesciunt aliquid obcaecati quibusdam, asperiores, laboriosam excepturi autem
+                                amet
+                                a quas error. 
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     </section>
     <hr>
-    <!--form-->
-    <section>
-        <form action="#">
-            <label for="email">
-                <h4>email</h4>
-                <input id="email" place holder="enter your email" />
-            </label>
-            <label for="message">
-                <h4>message</h4>
-                <textarea id="message"> your message</textarea>
-            </label>
-            <div class="submit-button-wrapper">
-                <input id="sumbit-button" type="submit" value="send message" />
+    <!--reservation-->
+    <section class="text-dark p-5 text-center" id="reservations">
+        <div class="container">
+            <div class="d-md-flex ">
+                <img class="img-fluid d w-50 h-50" src="table-setting.jpg" alt="table-setting">
+                <div class="p-3">
+                    <h1> <span class="text-warning">GET YOUR TABLE TODAY</span>
+                    </h1>
+                    <p class="lead">
+                    <h4>If you can not come today you can still make reservations </h4>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Nam quo possimus in minima explicabo pariatur laboriosam
+                    consectetur veritatis culpa officiis provident deserunt
+                    aspernatur exercitationem nisi
+                    veniam fugit, dolores laudantium facilis? </p>
+                    <button class="btn-success btn-lg" data-bs-toggle="modal" data-bs-target="#reservations">reservations</button>
+                </div>
+
             </div>
-        </form>
+        </div>
     </section>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="order" tabindex="-1">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="order"><span class="text-warning">DIVINE</span>COOKS delivery</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+    <hr>
+    <!--location-->
+    <section class="bg-light p-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md">
+                    <h2 class="text-center mb-4">LOCATION</h2>
+                    <ul class="list-group list-group-flush lead">
+                        <li class="list-group-item">
+                            <span class="fw-bold">MAIN LOCATION:</span> 50 main street bouston MA
+                        </li>
+                        <li class="list-group-item">
+                            <span class="fw-bold">NUMBER:</span> 07065470487
+                        </li>
+                        <li class="list-group-item">
+                            <span class="fw-bold">MAIN NUMBER:</span> 09026422525
+                        </li>
+                        <li class="list-group-item">
+                            <span class="fw-bold">EMAIL:</span> divinechukwuma982@gmail.com
+                        </li>
+                        <li class="list-group-item">
+                            <span class="fw-bold"></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <img src="map.jpg" alt="map" class="img-fluid card-image w-md-25 h-md-25" id="map">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="modal-body">
-          <p class="lead"> Fill out your order</p>
-          <form>
-           <div class="mb-3">
-              <label for="order" class="col-form-label"> order</label>
-              <input class="form-control" id="order" type="text">
-           </div>
-           <div class="mb-3">
-            <label for="address" class="col-form-label"> Address</label>
-            <input class="form-control" id="address" type="text">
-         </div>
-         <div class="mb-3">
-            <label for="phone" class="col-form-label"> Phone</label>
-            <input class="form-control" id="phone" type="text">
-         </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">ORDER</button>
-        </div>
-      </div>
+    </section>
+    <!--footer-->
+    <footer class="p-5 bg-dark text-light text-center position-relative">
+      <div class="container">
+        <p class="lead">copywrite &copy; 2023 <span class="text-warning">Dvine</span>Cooks</p>
+        <a href="#" class="position-absolute bottom-0 end-0 p-5">
+            <i class="bi bi-arrow-up-circle h1"></i>
+        </a>
     </div>
-  </div>
+    </footer>
+    <!-- Modal -->
+    <div class="modal fade" id="order" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="order"><span class="text-warning">DIVINE</span>COOKS delivery</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="lead"> Fill out your order</p>
+                    <form>
+                        <div class="mb-3">
+                            <label for="order" class="col-form-label"> order</label>
+                            <input class="form-control" id="order" type="text">
+                        </div>
+                        <div class="mb-3">
+                            <label for="address" class="col-form-label"> Address</label>
+                            <input class="form-control" id="address" type="text">
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="col-form-label"> Phone</label>
+                            <input class="form-control" id="phone" type="text">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">ORDER</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--modal2-->
+    <div class="modal fade" id="know" tabindex="-1">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="know"><span class="text-warning">DIVINE</span>COOKS information</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="lead"> WHAT WE DO</p>
+                    <P>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores explicabo mollitia officia iure
+                        fuga illum, id est architecto modi accusamus perspiciatis
+                        assumenda fugiat recusandae. Rerum nihil quidem nostrum quas magni
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, accusamus reprehenderit
+                        voluptatibus perferendis totam quo fugit tempore, eius impedit dolor reiciendis
+                        inventore temporibus earum quis enim itaque minus, ad nobis!?
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque perspiciatis quod, facilis
+                        blanditiis voluptate amet id, asperiores quaerat veritatis sit nostrum dolorum excepturi
+                        est tenetur corporis, odio maiores eum cupiditate?
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati reprehenderit consequatur
+                        accusamus nulla similique veritatis. Id quasi magnam odit aperiam. Officia quae expedita modi
+                        maxime voluptatem ut excepturi ex maiores.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente fuga, nostrum voluptas nihil
+                        alias commodi ratione ducimus aut assumenda sed dolor totam optio eos voluptate laboriosam
+                        pariatur ipsa officia eligendi.
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim, necessitatibus. Dolorem rerum
+                        quae veniam architecto temporibus consequatur earum, quos alias, dolor accusamus amet at quidem
+                        omnis harum debitis reprehenderit sed.
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus libero error a possimus
+                        explicabo sapiente fugiat natus veniam nam ut praesentium officiis, cupiditate ipsum tempora
+                        nisi perferendis facere quae ipsam.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste et ipsum explicabo expedita
+                        libero dicta pariatur quod quae minus facilis nam beatae quia veritatis porro, repellendus modi
+                        ipsam excepturi exercitationem?
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae tempora vel quidem. Harum nulla
+                        expedita excepturi aperiam esse atque minima dolore, cum, quae soluta perferendis accusamus
+                        libero. Nemo, iure quia?
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum error officia corporis
+                        minus, neque illum tenetur eum nobis impedit quod consectetur expedita sint quibusdam inventore
+                        ratione reprehenderit blanditiis, beatae eveniet!
+                    </P>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">READ MORE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--modal3-->
+    <div class="modal fade" id="reservations" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="reservations"><span class="text-warning">DIVINE</span>COOKS reservaions</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="lead"> Fill out the form</p>
+                    <form>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                          </div>
+                          <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">NAME</label>
+                            <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="name">
+                          </div>
+                          <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">PHONE</label>
+                            <input type="phone" class="form-control" id="exampleFormControlInput1" placeholder="22-233-9900">
+                          </div>
+                          <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">DATE</label>
+                            <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="21-30-2004">
+                          </div>
+                          <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">Your reasons for reservations</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                          </div>
+                    </div>
+                    </form>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">RESERVE NOW</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!--bootstrap js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
