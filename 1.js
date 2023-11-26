@@ -19,3 +19,6 @@ submitButton.addEventListener('click', function (e) {
 const btn = document.querySelector('.btn');{
     document.querySelector('body').classList.add('.h1');
 }*/
+/*$('.bright-text').click(function() {
+    $('.carousel-inner .carousel-item.active img').toggleClass('darken-img');
+});*/

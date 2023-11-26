@@ -3,11 +3,7 @@
 }
 
 body {
-    background: f1fbf;
-}
-
-.carousal-inner {
-    padding: 100px 0;
+    background: f1fbff;
 }
 
 .carousel-item {
@@ -15,8 +11,8 @@ body {
     min-height: 300px;
 }
 
-#inner {
-    bottom: 5px;
+.carousel-caption {
+    bottom: 220px;
     z-index: 1;
 }
 
@@ -25,7 +21,6 @@ body {
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-top: 25px;
-    z-index: 2;
 }
 
 .carousel-item p {
@@ -33,20 +28,19 @@ body {
     margin: auto;
     font-size: 18px;
     line-height: 1.9;
-    height: 150px;
     z-index: 2;
 }
 
-/*#inner::before{
+.carousel-inner::before{
     content: '';
     position: absolute;
     width: 100%;
     height: 100%;
     top:0;
     left: 0;
-    background-color: rgba(0,0, 1, 0.7);
+    background-color: rgba(0,0, 0, 0.7);
     z-index: 1;
-}*/
+}
 @media(min-width:768px) {
     .new-input {
         width: 50%;
@@ -55,8 +49,11 @@ body {
 
 .card-body img {
     height: 500px;
+    transition: all 1s;
 }
-
+.card-body img:hover{
+    transform: scale(1.1);
+}
 body {
     background: linear-gradient(to right, white, grey, white);
     /* Add this to your existing CSS or create a new style block */
