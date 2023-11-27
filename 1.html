@@ -136,11 +136,15 @@
         </div>
     </section>
     <hr>
+    <!--spinner-->
+    <div class="spinner-border text-danger" style="width: 7rem; height: 7rem;" role="status" id="spinner">
+        <span class="visually-hidden">Loading...</span>
+      </div>
     <!--types of dishes-->
     <section id="menu">
-        <div>
+        <div id="menue-rows">
             <h1 class="text-center text-light bg-warning">OUR MENU</h1>
-            <div class="row text-center">
+            <div class="row">
                 <div class="col-md-4">
                     <div class="card">
                         <div class="card-body text-center">
@@ -164,21 +168,21 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md">
+                <div class="col-md-4">
                     <div class="card">
                         <div class="card-body text-center">
                             <img src="pasta.jpg" alt="pasta" id="pasta" class="img-fluid card-image w-md-50 h-md-50">
                         </div>
                     </div>
                 </div>
-                <div class="col-md">
+                <div class="col-md-4">
                     <div class="card">
                         <div class="card-body text-center">
                             <img src="pancake2.jpg" alt="pancake" id="pancake" class="img-fluid card-image w-md-50 h-md-50">
                         </div>
                     </div>
                 </div>
-                <div class="col-md">
+                <div class="col-md-4">
                     <div class="card">
                         <div class="card-body text-center">
                             <img src="pizza2.jpg" alt="pizza" id="pizza" class="img-fluid card-image w-md-50 h-md-50">
@@ -188,7 +192,6 @@
             </div>
         </div>
     </section>
-
     <hr>
     <!--order-->
     <section id="order" class="text-dark p-5 text-center">

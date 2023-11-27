@@ -22,7 +22,6 @@ body {
     letter-spacing: 2px;
     margin-top: 25px;
 }
-
 .carousel-item p {
     width: 60%;
     margin: auto;
@@ -46,7 +45,12 @@ body {
         width: 50%;
     }
 }
-
+ #spinner{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+ }
 .card-body img {
     height: 500px;
     transition: all 1s;
