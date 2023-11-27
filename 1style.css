@@ -97,6 +97,7 @@ body {
     }
 
 }
+
 #progress{
     position: fixed;
     top: 50%;
@@ -106,14 +107,18 @@ body {
     border-radius: 50%;
     z-index: 3;
 }
-#progressbar{
-    position: fixed;
-    top: 52%;
-    left: 47%;
+#progressbar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 120px;
     height: 120px;
     border-radius: 50%;
     z-index: 3;
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    line-height: 120px;
+    font-size: 18px;
 }
-
-/* Center text vertically */
