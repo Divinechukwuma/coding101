@@ -1,29 +1,31 @@
-/*$(document).ready(function () {
-    $("#startLoading").on("click", function () {
-        // Show loader
-        $("#loader-container").show();
+$(document).ready(function (){
+    $('#select-loader').click(function (e) {
+        e.preventDefault()
+        var duration = $("#duration").val();
+        var option = $("#option").val();
+        var color = $("#color").val();
 
-        // Simulate loading process
-        simulateLoading();
+        // Check if any field is empty
+        if (!duration || !option || !color) {
+            alert("Please fill in all fields");
+        }
+        switch (option) {
+            case 'spinner':
+               $('#spinner').css({'display':'block',
+             'color':$('#color').val()
+            })
+            setTimeout(() => {
+                $('#spinner').css('display','block')
+            }, parseInt(duration));
+                break;
+                case'header':
+                $('#header').css({'display':'block',
+             'background-color':$('#color').val()
+            })
+            setTimeout(() => {
+                $('#header').css('display','block')
+            }, parseInt(duration));
+                break;
+        }
     });
-
-    function simulateLoading() {
-        var progressBar = $("#progress-bar");
-
-        // Simulate a loading process by updating the progress bar
-        var progress = 0;
-        var interval = setInterval(function () {
-            progress += Math.random() * 10;
-
-            // Update the progress bar
-            progressBar.width(progress + "%").attr("aria-valuenow", progress);
-
-            // Check if loading is complete
-            if (progress >= 100) {
-                clearInterval(interval);
-                // Hide loader after loading is complete
-                $("#loader-container").hide();
-            }
-        }, 500);
-    }
-});*/
+});

@@ -51,7 +51,7 @@ body {
 #spinner {
     position: fixed;
     top: 50%;
-    left: 50%;
+    left: 46%;
     z-index: 3;
 }
 
@@ -97,32 +97,23 @@ body {
     }
 
 }
-
-#loader-container {
-    display: block;
+#progress{
     position: fixed;
     top: 50%;
-    left: 40%;
-    width: 200px;
-    height: 4%;
-    background:#007bff;
-    z-index: 2;
-    border-radius: 10%;
+    left: 46%;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    z-index: 3;
 }
-
-
-#progress-bar {
-    width: 50%;
-    /* Initial progress value */
-    height: 100%;
-    background-color: #007bff;
-    /* Bootstrap primary color */
-    color: white;
-    /* Text color */
-    text-align: center;
-    line-height: 40px;
-    z-index:3;
-    text-align: center;
+#progressbar{
+    position: fixed;
+    top: 52%;
+    left: 47%;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    z-index: 3;
 }
 
 /* Center text vertically */

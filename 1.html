@@ -15,8 +15,18 @@
 </head>
 
 <body>
-    <!--navbar-->
-    <div id="header"></div>
+    <!--loaders-->
+    <!--header-->
+    <div id="header" style="display:none;"></div>
+     <!--spinner-->
+     <div class="spinner-border" style="width: 7rem; height: 7rem; display:none;"  role="status" id="spinner">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+    <!--progress loader-->
+    <div class="progress" id="progress" style="display:none;">
+        <div class="progress-bar" role="progressbar"  id="progressbar">25%</div>
+      </div>
+      <!--navbar-->
     <section>
         <nav class="navbar navbar-expand-md bg-dark navbar-dark pt-3 fixed-top">
             <div class="container">
@@ -136,17 +146,6 @@
         </div>
     </section>
     <hr>
-    <!--spinner-->
-    <div class="spinner-border text-danger" style="width: 7rem; height: 7rem;" role="status" id="spinner">
-        <span class="visually-hidden">Loading...</span>
-    </div>
-    <!--progress loader-->
-    <div id="loader-container">
-        <div class="progress mt-1 mb-1 h1 text-center" style="width: 200px;" id="progress">50%
-            <progress id="progress-bar" class="progress-bar text-primary" role="progressbar" value="50" min="0"
-                max="100" style="width: 0;height: 0;">50%</progress>
-        </div>
-    </div>
     <!--types of dishes-->
     <section id="menu">
         <div id="menue-rows">
@@ -462,20 +461,22 @@
                     </P>
                     <form>
                         <div class="mb-3">
-                            <label for="order" class="col-form-label"> duration</label>
-                            <input class="form-control" id="order" type="text">
+                            <label for="duration" class="col-form-label"> duration</label>
+                            <input class="form-control" type="text" id="duration">
                         </div>
                         <div class="mb-3">
-                            <select class="form-select">
+                            <select class="form-select" id="option">
                                 <option selected>select loader</option>
-                                <option value="1">spinner</option>
-                                <option value="2">progress</option>
-                                <option value="3">header</option>
+                                <option value="spinner">spinner</option>
+                                <option value="progress">progress</option>
+                                <option value="header">header</option>
                             </select>
                         </div>
                         <div class="mb-3">
-                            <label for="color" class="col-form-label"> color</label>
-                            <input class="form-control" id="phone" type="color">
+                            <input class="form-control" type="color" id="color">
+                        </div>
+                        <div class="text-center text-primary">
+                            <button id="select-loader" class="text-dark bg-primary"type="submit">select loader</button>
                         </div>
                     </form>
                 </div>
