@@ -1,17 +1,5 @@
 $(document).ready(function (){
     $('#select-loader').click(function (e) {
-        e.preventDefault()
-     function updateProgress(value){
-        $('#progressbar').text(value + '%');
-        $('#progressbar').stop().animate({
-            width:value + '%'
-        },500,function(){
-             
-        })
-     }
-
-
-
         $("button").prop('disabled',true)
         var duration = $("#duration").val();
         var option = $("#option").val();
@@ -40,8 +28,8 @@ $(document).ready(function (){
                 $("button").prop('disabled',false)
             }, parseInt(duration));
                 break;
-                case 'progress':
-                    $('#progress').css({'display': 'block',
+                case 'progress-bar':
+                    $('#progress-bar').css({'display': 'block',
                     'background-color':$('#color').val()
         })
         break;
