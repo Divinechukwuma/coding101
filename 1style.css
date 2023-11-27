@@ -22,6 +22,7 @@ body {
     letter-spacing: 2px;
     margin-top: 25px;
 }
+
 .carousel-item p {
     width: 60%;
     margin: auto;
@@ -30,34 +31,39 @@ body {
     z-index: 2;
 }
 
-.carousel-inner::before{
+.carousel-inner::before {
     content: '';
     position: absolute;
     width: 100%;
     height: 100%;
-    top:0;
+    top: 0;
     left: 0;
-    background-color: rgba(0,0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.7);
     z-index: 1;
 }
+
 @media(min-width:768px) {
     .new-input {
         width: 50%;
     }
 }
- #spinner{
+
+#spinner {
     position: fixed;
     top: 50%;
     left: 50%;
     z-index: 3;
- }
+}
+
 .card-body img {
     height: 500px;
     transition: all 1s;
 }
-.card-body img:hover{
+
+.card-body img:hover {
     transform: scale(1.1);
 }
+
 body {
     background: linear-gradient(to right, white, grey, white);
     /* Add this to your existing CSS or create a new style block */
@@ -70,7 +76,8 @@ body {
     height: 250px;
     width: 900%;
 }
-#header{
+
+#header {
     position: fixed;
     top: 63px;
     width: 100%;
@@ -79,11 +86,43 @@ body {
     animation: move 2s linear infinite;
     z-index: 2;
 }
-@keyframes move { 0%{
-     width: 0%;
+
+@keyframes move {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+
 }
-100%{
-    width: 100%;
+
+#loader-container {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 40%;
+    width: 200px;
+    height: 4%;
+    background:#007bff;
+    z-index: 2;
+    border-radius: 10%;
 }
-    
+
+
+#progress-bar {
+    width: 50%;
+    /* Initial progress value */
+    height: 100%;
+    background-color: #007bff;
+    /* Bootstrap primary color */
+    color: white;
+    /* Text color */
+    text-align: center;
+    line-height: 40px;
+    z-index:3;
+    text-align: center;
 }
+
+/* Center text vertically */
