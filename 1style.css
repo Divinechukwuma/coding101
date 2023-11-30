@@ -47,6 +47,28 @@ body {
         width: 50%;
     }
 }
+@media(min-width:768px) {
+    .carousel-item img{
+        width: 50%;
+        height: 100%;
+    }
+}
+@media(min-width:500px) {
+    .carousel-item img{
+        width: 50%;
+        height: 100%;
+    }
+}
+@media(min-width:768px) {
+    .col-md div{
+        margin: 20px 0 20px;
+    }
+}
+@media(min-width:500px) {
+    .col-md div{
+       margin: 20px 0 20px;
+    }
+}
 
 #spinner {
     position: fixed;
@@ -65,8 +87,6 @@ body {
 }
 
 body {
-    background: linear-gradient(to right, white, grey, white);
-    /* Add this to your existing CSS or create a new style block */
 
     scroll-behavior: smooth;
 
