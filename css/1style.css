@@ -60,12 +60,12 @@ body {
     }
 }
 @media(min-width:768px) {
-    .col-md div{
+    .col-sm div{
         margin: 20px 0 20px;
     }
 }
 @media(min-width:500px) {
-    .col-md div{
+    .col-sm div{
        margin: 20px 0 20px;
     }
 }
