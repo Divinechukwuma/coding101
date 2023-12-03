@@ -1,6 +1,6 @@
 $(document).ready(function () {
   /*const searchInput = $('#searchinput')
-
+ //in jquery there is nothing like add eventlistener tmo elements directry only if u transform it to a dom element 
    searchInput.addEventListener('#searchbutton', (e)=>{
     const value =e.target.value
     console.log(value)
@@ -9,16 +9,27 @@ $(document).ready(function () {
    // Using jQuery to select the element with the ID 'searchinput'
 const searchInput = $('#searchinput');
 //whne using jquery addeventlistener in jquery just js  it should be used directly on the dom
-// Converting the jQuery object to a DOM element
-const searchInputDom = searchInput[0];
-
 // Adding an event listener for the 'input' event
-searchInputDom.addEventListener('input', (e) => {
+searchInput.on('input', (e) => {
     const value = e.target.value;
-    console.log(user);
-});
 
-user = data.map(user => {
+});
+function renderData(data, containers) {
+    // Clear existing content
+    $(`#${containers}`).empty();
+
+    // Render each data item
+    data.forEach(item => {
+        const card = $('<div class="card">');
+        const cardBody = $('<div class="card-body text-center">');
+        const image = $(`<img src="${item.image}" alt="${item.name}" class="img-fluid card-image w-md-25 h-md-25">`);
+
+        cardBody.append(image);
+        card.append(cardBody);
+        $(`#${containers}`).append(card);
+    });
+}
+
  // Sample data structure for menu items
 const menuItems = [
     { name: 'Stake', image: 'img/stake.jpg' },
@@ -51,31 +62,27 @@ const chefs = [
  const location = [
     {image:'img/map.jpg', span:'main location'}
  ]
+ const introduction = [
+    { image:'img/day restaurant.jpg', description:'lorem ipsum'}
+ ]
  
-    return{menuItems:user.menuItems,chefs:user.chefs,order:user.order,reservation:user.reservation,location:user.location}
-})
+// Render menu items
+renderData(menuItems, 'menu-content');
 
+// Render chefs
+renderData(chefs, 'chefs-content'); 
 
+// Render order items
+renderData(order, 'order-content');
 
-/*function renderMenu(data) {
-    // Clear existing content
-    $('#menu-content').empty();
+// Render reservation
+renderData(reservation, 'reservation-content');
 
-    // Render each menu item
-    data.forEach(item => {
-        const card = $('<div class="card">');
-        const cardBody = $('<div class="card-body text-center">');
-        const image = $(`<img src="${item.image}" alt="${item.name}" class="img-fluid card-image w-md-25 h-md-25">`);
+// Render location 
+renderData(location, 'location-content');
 
-        cardBody.append(image);
-        card.append(cardBody);
-        $('#menu-content').append(card);
-    });
-}
-
-$(document).ready(function () {
-    // Initialize with menu data
-    renderMenu(menuItems);
+// Render introduction
+renderData(introduction, 'introduction-content');
 
     // You can add similar initialization for other data, e.g., renderChefs(chefs);
 });
@@ -84,15 +91,27 @@ $('#searchbutton').on('click', function () {
     const searchTerm = $('#searchinput').val().toLowerCase();
 
     // Filter menu items based on search term
-    const filteredMenu = menuItems.filter(item => item.name.toLowerCase().includes(searchTerm));
+    const filteredMenuItems= menuItems.filter(item => item.name.toLowerCase().includes(searchTerm));
+     // Filter chefs based on search term
+     const filteredChefs = chefs.filter(chef => chef.name.toLowerCase().includes(searchTerm));
+    // Filter order based on search term
+    const filteredOrder = order.filter(order => order.h1.toLowerCase().includes(searchTerm));
+    // Filter location based on search term
+    const filteredLocation = location.filter(location=> location.span.toLowerCase().includes(searchTerm));
+    // Filter introduction based on search term
+    const filteredIntroduction = introduction.filter(introduction => introduction.description.toLowerCase().includes(searchTerm));
+    // Filter reservation based on search term
+    const filteredReservation = reservation.filter(reservation => reservation.h1.toLowerCase().includes(searchTerm));
 
-    // Render the filtered menu
-    renderMenu(filteredMenu);
-});*/
+  // Combine the filtered results
+  const combinedResults = [...filteredMenuItems, ...filteredChefs,...filteredOrder,...filteredLocation,...filteredIntroduction,...filteredReservation];
 
+// Render the combined filtered data
+containers[ 'menu-content','chef-content','order-content','reservation-content','location-content','introduction-content'];
+renderData(combinedResults,containers)
+});
 
-
-
+    //this is too fetch data from json
     //fetch("https://jsonplaceholder.typicode.com/users")
       // .then(res => res.json())
        //.then(data => {})
@@ -155,4 +174,3 @@ $('#searchbutton').on('click', function () {
 
         $("button").prop('disabled', false);
     })
-})
