@@ -1,35 +1,22 @@
 $(document).ready(function () {
-  /*const searchInput = $('#searchinput')
- //in jquery there is nothing like add eventlistener tmo elements directry only if u transform it to a dom element 
-   searchInput.addEventListener('#searchbutton', (e)=>{
-    const value =e.target.value
-    console.log(value)
-   })*/
-
-   // Using jQuery to select the element with the ID 'searchinput'
-const searchInput = $('#searchinput');
-//whne using jquery addeventlistener in jquery just js  it should be used directly on the dom
-// Adding an event listener for the 'input' event
-searchInput.on('input', (e) => {
-    const value = e.target.value;
-
-});
-function renderData(data, containers) {
-    // Clear existing content
-    $(`#${containers}`).empty();
-
-    // Render each data item
+//function to render data into a container 
+function renderData(data,container){
+    //clear existing content
+    $('#$[container]').empty();
+    //render each data item 
     data.forEach(item => {
-        const card = $('<div class="card">');
-        const cardBody = $('<div class="card-body text-center">');
-        const image = $(`<img src="${item.image}" alt="${item.name}" class="img-fluid card-image w-md-25 h-md-25">`);
-
+        const card = $('<div class = "card">');
+        const cardBody = $('<div class ="card-body text-center">');
+        const image = $(`<img src="${item.image}" alt="${item.name}"class ="img-fluid card-image w-md-25 h-md-25`)
+          
         cardBody.append(image);
         card.append(cardBody);
-        $(`#${containers}`).append(card);
-    });
+        $('#$[container]').append(card);
+    })
 }
 
+
+    //all my data
  // Sample data structure for menu items
 const menuItems = [
     { name: 'Stake', image: 'img/stake.jpg' },
@@ -38,8 +25,7 @@ const menuItems = [
     { name: 'pasta', image: 'img/pasta.jpg' },
     { name: 'pizza', image: 'img/pizza2.jpg' },
     { name: 'pancake', image: 'img/pancake2.jpg' },
-];
-
+]
 // Sample data structure for chefs
 const chefs = [
     { name: 'Chimobi Wisdom', image: 'img/chef5.jpg', description: 'Lorem ipsum...' },
@@ -65,57 +51,14 @@ const chefs = [
  const introduction = [
     { image:'img/day restaurant.jpg', description:'lorem ipsum'}
  ]
- 
-// Render menu items
-renderData(menuItems, 'menu-content');
-
-// Render chefs
-renderData(chefs, 'chefs-content'); 
-
-// Render order items
-renderData(order, 'order-content');
-
-// Render reservation
-renderData(reservation, 'reservation-content');
-
-// Render location 
-renderData(location, 'location-content');
-
-// Render introduction
-renderData(introduction, 'introduction-content');
-
-    // You can add similar initialization for other data, e.g., renderChefs(chefs);
-});
-
-$('#searchbutton').on('click', function () {
-    const searchTerm = $('#searchinput').val().toLowerCase();
-
-    // Filter menu items based on search term
-    const filteredMenuItems= menuItems.filter(item => item.name.toLowerCase().includes(searchTerm));
-     // Filter chefs based on search term
-     const filteredChefs = chefs.filter(chef => chef.name.toLowerCase().includes(searchTerm));
-    // Filter order based on search term
-    const filteredOrder = order.filter(order => order.h1.toLowerCase().includes(searchTerm));
-    // Filter location based on search term
-    const filteredLocation = location.filter(location=> location.span.toLowerCase().includes(searchTerm));
-    // Filter introduction based on search term
-    const filteredIntroduction = introduction.filter(introduction => introduction.description.toLowerCase().includes(searchTerm));
-    // Filter reservation based on search term
-    const filteredReservation = reservation.filter(reservation => reservation.h1.toLowerCase().includes(searchTerm));
-
-  // Combine the filtered results
-  const combinedResults = [...filteredMenuItems, ...filteredChefs,...filteredOrder,...filteredLocation,...filteredIntroduction,...filteredReservation];
-
-// Render the combined filtered data
-containers[ 'menu-content','chef-content','order-content','reservation-content','location-content','introduction-content'];
-renderData(combinedResults,containers)
-});
-
-    //this is too fetch data from json
-    //fetch("https://jsonplaceholder.typicode.com/users")
-      // .then(res => res.json())
-       //.then(data => {})
-
+ // Render each data set into its corresponding container
+    renderData(menuItems, 'menu-content');
+    renderData(chefs, 'chefs-content');
+    renderData(order, 'order-content');
+    renderData(reservation, 'reservation-content');
+    renderData(location, 'location-content');
+    renderData(introduction, 'introduction-content');g
+    
     $('#select-loader').click(function (e) {
         $("button").prop('disabled', true);
         var duration = $("#duration").val();
@@ -174,3 +117,4 @@ renderData(combinedResults,containers)
 
         $("button").prop('disabled', false);
     })
+})
