@@ -14,6 +14,7 @@
                 <th>SN</th>
                 <th>Title</th>
                 <th>Price</th>
+                <td>image</td>
                 <th>Feature</th>
                 <th>Active</th>
                 <th>Action</th>
@@ -23,6 +24,7 @@
                 <td>1</td>
                 <td>im cool</td>
                 <td>8000</td>
+                <td>3</td>
                 <td>yes</td>
                 <td>no</td>
                 <td>
