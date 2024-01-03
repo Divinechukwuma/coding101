@@ -10,6 +10,11 @@
             echo $_SESSION['new'];
             unset($_SESSION['new']);
         }
+
+        if(isset($_SESSION['del'])){
+            echo $_SESSION['del'];
+            unset($_SESSION['del']);
+        }
             
         ?>
         <br><br><br>
