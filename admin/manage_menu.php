@@ -11,6 +11,12 @@
         unset($_SESSION['add']);
     }
 
+    
+    if (isset($_SESSION['delete'])) {
+        echo $_SESSION['delete'];
+        unset($_SESSION['delete']);
+    }
+
     ?>
 
     <br><br>
@@ -57,7 +63,7 @@
                     <tr>
                         <td><?php echo htmlspecialchars($sn++); ?></td>
                         <td><?php echo htmlspecialchars($Title); ?></td>
-                        <td><?php echo htmlspecialchars($Price); ?></td>
+                        <td>$<?php echo htmlspecialchars($Price); ?></td>
                         <td>
                             <?php
                             // Check whether we have an image or not 
@@ -67,7 +73,7 @@
                             } else {
                                 // We have an image, display the image 
                             ?>
-                                <img src="<?php echo SITEURL; ?>.\images\tacos\<?php echo htmlspecialchars( $Image_name); ?>"  >
+                                <img src="<?php echo SITEURL; ?>./images/tacos<?php echo htmlspecialchars( $Image_name); ?> " width="100px"  >
                             <?php
                             }
                             ?>
@@ -77,8 +83,8 @@
                         <td><?php echo htmlspecialchars($Featured); ?></td>
                         <td><?php echo htmlspecialchars($Active); ?></td>
                         <td>
-                            <input type="submit" value="Update Menu" class="btn-secondary">
-                            <input type="submit" value="Delete Menu" class="btn-danger">
+                               <a href="<?php echo SITEURL;?>update_menu.php?id=<?php echo $Id;?>" class="btn-secondary">Update Menu</a>
+                                <a href="<?php echo SITEURL?>delete_menu.php?id=<?php echo $Id;?>&image_name=<?php echo $Image_name;?>" class="btn-danger">Delete Menu</a>
                         </td>
 
                     </tr>
