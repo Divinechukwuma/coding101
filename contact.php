@@ -16,16 +16,16 @@
     <nav class="header__nav">
       <ul class="header__ul">
         <li>
-          <a href="index.html">Home</a>
+          <a href="index.php">Home</a>
         </li>
         <li>
-          <a href="menu.html">Menu</a>
+          <a href="menu.php">Menu</a>
         </li> 
         <li>
-          <a href="hours.html"> Hours</a>
+          <a href="hours.php"> Hours</a>
         </li>
         <li>
-          <a href="about.html">About</a>
+          <a href="about.php">About</a>
         </li> 
       </ul> 
     </nav>
