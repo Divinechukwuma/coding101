@@ -14,7 +14,7 @@
         <ul class="nav__ul">
             <li><a href="index.php">Home</a></li>
             <li><a href="manage_admin.php">Admin</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="manage_contact.php">Contact</a></li>
             <li><a href="manage_menu.php"> Menu</a></li>
         </ul>
     </nav>

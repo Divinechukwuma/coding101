@@ -92,11 +92,11 @@
 
           // get data from form 
           $Message = $_POST['message'];
-          $Customer_email = $_POST['customer_email'];
           $Customer_name = $_POST['customer_name'];
+          $Customer_email = $_POST['customer_email'];
           //Write sql query to insert infor into data base
 
-          $sql = "INSERT INTO tbl_contact (message, customer_email, customer_name) VALUES (?, ?, ?)";
+          $sql = "INSERT INTO tbl_contact (message, customer_name, customer_email) VALUES (?, ?, ?)";
           $stmt = $conn->prepare($sql);
           $stmt->bind_param("sss", $Message,$Customer_name,$Customer_email);
           $stmt->execute();
