@@ -1,3 +1,4 @@
+<?php include('config/data.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,7 +33,7 @@
 
   </header> 
 
-    <form action="#" method="POST" class="search__form">
+    <form action="#" class="search__form">
       <input class="search__input" type="search" name="search" placeholder="Search for Food.." required>
       <input class="search__button"  type="submit" name="submit" value="Search" class="btn btn-primary">
     </form>
@@ -62,17 +63,17 @@
     <article class="main__article contact"> 
       <h2 class="contact__h2">Our Contact Form </h2>
 
-      <form action="https://httbin.org/get" method="get" class="contact__form">
+      <form action="" method="POST" class="contact__form">
         <fieldset class="contact_fieldset">
           <legend class="offscreen">Send Us A Message </legend>
           <p class="contact__p">
             <label class="contact__label" for="name"> Name:</label>
-            <input class="contact__input" type="text" name="name" id="name" placeholder="Your Name" required>
+            <input class="contact__input" type="text" name="customer_name"placeholder="Your Name" required>
           </p>
 
           <p class="contact__p">
             <label class="contact__label" for="email"> Email:</label>
-            <input class="contact__input" type="text" name="Email" id="Email" placeholder="Your Email" required>
+            <input class="contact__input" type="text" name="customer_email"  placeholder="Your Email" required>
           </p>
  
           <p class="contact__p">
@@ -81,12 +82,43 @@
             placeholder="Type Your Mssage here" required></textarea>
           </p>
         </fieldset>
-        <button class="contact__button" type="submit"> Send</button>
+        <button class="contact__button" name="submit" type="submit"> Send</button>
         <button class="contact__button" type="reset">Reset</button>
+ 
+        <?php 
+      
+        if(isset($_POST['submit'])){
+          //echo "im awesome";
+
+          // get data from form 
+          $Message = $_POST['message'];
+          $Customer_email = $_POST['customer_email'];
+          $Customer_name = $_POST['customer_name'];
+          //Write sql query to insert infor into data base
+
+          $sql = "INSERT INTO tbl_contact (message, customer_email, customer_name) VALUES (?, ?, ?)";
+          $stmt = $conn->prepare($sql);
+          $stmt->bind_param("sss", $Message,$Customer_name,$Customer_email);
+          $stmt->execute();
+          $res=$stmt->get_result();
+
+          if($res == true){
+             
+            $_SESSION['add']="<div class='success'> Message Sent Successfully.</div>";
+            //redirect
+            header('location'.SITEURL.'index.php');
+          }else{
+            $_SESSION['add']="<div class='error'> Message Failed To Send</div>";
+            //redirect
+            header('location'.SITEURL.'index.php');
+          }
+        }
+      ?>
+
       </form>
+
     </article>
   </main>
-
     
   <footer class="footer">
     <p>

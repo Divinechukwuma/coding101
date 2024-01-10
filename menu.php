@@ -69,9 +69,9 @@
         </thead>
 
         <?php 
-       $sql = "SELECT * FROM tbl_menu WHERE active = ? AND featured = ?";
+       $sql = "SELECT * FROM tbl_menu WHERE active = 'yes' AND featured = 'yes'";
        $stmt = $conn->prepare($sql);
-       $stmt->bind_param("ss", $Active, $Featured);
+      // $stmt->bind_param("ss", $yes, $yes);
        $stmt->execute();
        $res = $stmt->get_result();
        
@@ -83,13 +83,13 @@
           $Price = $row['price'];
           $Image_name = $row['image_name'];
          ?>
-          tbody>
+          <tbody>
           <tr>
             <th class="menu__item menu__cr" scope="row" rowspan="4">
               Crunchy
             </th>
             <td class="menu__item"><?php echo $Title?></td>
-            <td class="menu__item"><?php echo $Price?> 
+            <td class="menu__item">$<?php echo $Price?> 
            
             <?php
                     //Check whether image is available or not
@@ -107,24 +107,21 @@
                     }
                     ?>
 
+                    
+
           </td>
           </tr>
 
-          <th class="menu__item menu__sf" scope="row" rowspan="3">
-            soft
-          </th>
-          <td class="menu__item">1</td>
-          <td class="menu__item">$2.00 <img src="../images/project/taco (4).jpg" class="menu__item" alt=""></td>
-          </tr>
+           
 
-          <tr>
+         <!-- <tr>
             <th class="menu__item menu__dr" scope="row" rowspan="3">
               Drinks
             </th>
             <td class="menu__item">1</td>
             <td class="menu__item">$2.00 <img src="../images/project/drinks.jpg" class="menu__item" alt=""></td>
           </tr>
-        </tbody>
+        </tbody> -->
 
           <?php
 
@@ -133,6 +130,132 @@
 
 
           ?>
+
+<?php 
+       $sql2 = "SELECT * FROM tbl_menu WHERE active = 'yes' AND featured = 'no'";
+       $stmt2  = $conn->prepare($sql2);
+      // $stmt->bind_param("ss", $yes, $yes);
+       $stmt2->execute();
+       $res2 = $stmt2->get_result();
+       
+        if($res2->num_rows>0){
+
+          //fetch the data from database
+          while($row2=$res2->fetch_assoc()){
+          $Title2 = $row2['title'];
+          $Price2 = $row2['price'];
+          $Image_name2 = $row2['image_name'];
+         ?>
+          <tbody>
+          <tr>
+            <th class="menu__item menu__sf" scope="row" rowspan="4">
+              Soft
+            </th>
+            <td class="menu__item"><?php echo $Title2?></td>
+            <td class="menu__item">$<?php echo $Price2?> 
+           
+            <?php
+                    //Check whether image is available or not
+
+                    if($Image_name2==""){
+
+                        //Display message
+                        echo "<div class='error'>Image not available.</div>";
+                    }else{
+
+                        //Image available
+                        ?>
+                         <img src="<?php echo SITEURL?>./images/tacos<?php echo $Image_name2;?>" alt="tacos" class="img-responsive img-curve">
+                        <?php
+                    }
+                    ?>
+
+                    
+
+          </td>
+          </tr>
+
+           
+
+         <!--<tr>
+            <th class="menu__item menu__dr" scope="row" rowspan="3">
+              Drinks
+            </th>
+            <td class="menu__item">1</td>
+            <td class="menu__item">$2.00 <img src="../images/project/drinks.jpg" class="menu__item" alt=""></td>
+          </tr>
+        </tbody>-->
+
+          <?php
+
+          }
+        }
+
+
+          ?> 
+
+<?php 
+       $sql3 = "SELECT * FROM tbl_menu WHERE active = 'no' AND featured = 'yes'";
+       $stmt3  = $conn->prepare($sql3);
+      // $stmt->bind_param("ss", $yes, $yes);
+       $stmt3->execute();
+       $res3 = $stmt3->get_result();
+       
+        if($res3->num_rows>0){
+
+          //fetch the data from database
+          while($row3=$res3->fetch_assoc()){
+          $Title3 = $row3['title'];
+          $Price3 = $row3['price'];
+          $Image_name3 = $row3['image_name'];
+         ?>
+          <tbody>
+          <tr>
+            <th class="menu__item menu__dr" scope="row" rowspan="4">
+              Drinks
+            </th>
+            <td class="menu__item"><?php echo $Title3?></td>
+            <td class="menu__item">$<?php echo $Price3?> 
+           
+            <?php
+                    //Check whether image is available or not
+
+                    if($Image_name2==""){
+
+                        //Display message
+                        echo "<div class='error'>Image not available.</div>";
+                    }else{
+
+                        //Image available
+                        ?>
+                         <img src="<?php echo SITEURL?>./images/tacos<?php echo $Image_name3;?>" alt="tacos" class="img-responsive img-curve">
+                        <?php
+                    }
+                    ?>
+
+                    
+
+          </td>
+          </tr>
+
+           
+
+         <!--<tr>
+            <th class="menu__item menu__dr" scope="row" rowspan="3">
+              Drinks
+            </th>
+            <td class="menu__item">1</td>
+            <td class="menu__item">$2.00 <img src="../images/project/drinks.jpg" class="menu__item" alt=""></td>
+          </tr>
+        </tbody>-->
+
+          <?php
+
+          }
+        }
+
+
+          ?> 
 
         <tfoot>
           <tr>
